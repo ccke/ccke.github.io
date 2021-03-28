@@ -15,33 +15,31 @@ timezone: Asia/Shanghai
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Chirpy                          # the main title
+title: 格物致知                          # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: 要专精，也要博广呀!   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  Chukeey酱的个人博客呀！
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'https://ccke.github.io'
 
 author: chukeey                  # change to your full name
 
 github:
-  username: github_username             # change to your github username
+  username: ccke             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: chukeey3            # change to your twitter username
 
 social:
-  name: your_full_name                  # it will shows as the copyright owner in Footer
-  email: example@doamin.com             # change to your email address
+  name: chukeey                  # it will shows as the copyright owner in Footer
+  email: chukeey.ke@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://twitter.com/chukeey3      # change to your twitter homepage
+    - https://github.com/ccke       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
