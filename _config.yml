@@ -8,7 +8,7 @@ theme: jekyll-theme-chirpy
 baseurl: ''
 
 # the HTML language tag › https://www.w3.org/International/questions/qa-choosing-language-tags
-lang: en-US
+lang: zh-CN
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Shanghai
@@ -27,7 +27,7 @@ description: >-                        # used by seo meta and the atom feed
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: ''
 
-author: your_full_name                  # change to your full name
+author: chukeey                  # change to your full name
 
 github:
   username: github_username             # change to your github username
