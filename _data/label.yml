@@ -6,14 +6,14 @@ panel:
   toc: 文章目录
 
 post:
-  relate_posts: Further Reading
-  share: Share
+  relate_posts: 接下来阅读
+  share: 分享
   button:
-    next: Newer
-    previous: Older
+    next: 下一篇
+    previous: 上一篇
 
 search_hint: 搜索   # text show on search bar
 
-pin_prompt: Pinned    # pinned prompt
+pin_prompt: 固定提示    # pinned prompt
 
 read_time_unit: min   # see posts' time to read
