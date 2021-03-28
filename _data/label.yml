@@ -1,9 +1,9 @@
 # The label text of site.
 
 panel:
-  lastmod: Recent Update
-  trending_tags: Trending Tags
-  toc: Contents
+  lastmod: 最近更新
+  trending_tags: 热门标签
+  toc: 文章目录
 
 post:
   relate_posts: Further Reading
@@ -12,7 +12,7 @@ post:
     next: Newer
     previous: Older
 
-search_hint: Search   # text show on search bar
+search_hint: 搜索   # text show on search bar
 
 pin_prompt: Pinned    # pinned prompt
 
