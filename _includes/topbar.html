@@ -29,11 +29,16 @@
         <span>
           {% assign url = item %}
           {% if item == 'posts' and page.layout == 'post' %}
-            {% assign url = '/' %}
+            <a href="{{ '/' | relative_url }}">{{ '主页' }}</a>
+          {% else %}
+            <a href="{{ url | relative_url }}">
+              {% for tab in site.tabs %}
+                {% if tab.name == item %}
+                  {{ tab.title | capitalize }}
+                {% endif %}
+              {% endfor %}
+            </a>
           {% endif %}
-          <a href="{{ url | relative_url }}">
-            {{ item | capitalize }}
-          </a>
         </span>
 
         {% endif %}
