@@ -118,8 +118,8 @@ layout: default
 
     {% include post-nav.html %}
 
-    {% if site.disqus.comments and page.comments %}
-      {% include disqus.html %}
+    {% if site.utterances.comments and page.comments %}
+      {% include utterances.html %}
     {% endif %}
 
     </div> <!-- #post-extend-wrapper -->

@@ -103,6 +103,20 @@
       }
     }
 
+    updateCommentStyle() {
+      var theme = "{{ site.utterances.light_theme }}";
+      if (this.modeStatus === ModeToggle.DARK_MODE) {
+        theme = "{{ site.utterances.dark_theme }}";
+      }
+      let comment = document.querySelector("iframe.utterances-frame");
+      if (comment == null) {
+        return;
+      }
+      comment.contentWindow.postMessage(
+        { type: "set-theme", theme: theme }, "https://utteranc.es/"
+      );
+    }
+
     flipMode() {
       if (this.hasMode) {
         if (this.isSysDarkPrefer) {
@@ -129,6 +143,7 @@
       }
 
       this.updateMermaid();
+      this.updateCommentStyle();
 
     } /* flipMode() */
 
