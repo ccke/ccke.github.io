@@ -5,5 +5,6 @@ icon: fas fa-info
 order: 4
 ---
 
+喜欢看书和纪录片，喜欢户外运动，是热爱生活的精神小伙呀！
 
-> **Note**: Add Markdown syntax content to file `_tabs/about.md` and it will show up on this page.
+![心情](/assets/img/emotions.jpg){: width="600"}
