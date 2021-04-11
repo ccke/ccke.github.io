@@ -193,12 +193,19 @@ PSR-4 规范了如何指定文件路径从而自动加载类定义，同时规�
 > - 文件路径：./vendor/Symfony/Core/Request.php
 >
 > 目录结构：
+>
 > -vendor/
+>
 > | -vendor_name/
+>
 > | | -package_name/
+>
 > | | | -src/
+>
 > | | | | -ClassName.php       # Vendor_Name\Package_Name\ClassName
+>
 > | | | -tests/
+>
 > | | | | -ClassNameTest.php   # Vendor_Name\Package_Name\ClassNameTest
 
 #### 3.3 Composer依赖管理
