@@ -16,7 +16,7 @@ include 和 require 除了处理错误的方式不同之外，在其他方面都
 > - include 生成一个警告（E_WARNING），在错误发生后脚本会继续执行。
 
 这个在小规模开发的时候，没什么大问题；但在大型的开发项目中，这么做会产生大量的require或者include方法调用，不仅降低效率，而且使得代码难以维护，况且require_once的代价很大。
-在PHP5之前，各个PHP框架如果要实现类的自动加载，一般都是按照某种约定自己实现一个遍历目录，自动加载所有符合约定规则的文件的类或函数。 当然，PHP5之前对面向对象的支持并不是太好，类的使用也没有现在频繁。 在PHP5后，当加载PHP类时，如果类所在文件没有被包含进来，或者类名出错，Zend引擎会自动调用 **\__autoload函数**。此函数需要用户自己实现 __autoload函数。 在PHP5.1.2版本后，可以使用**spl_autoload_register函数**自定义自动加载处理函数。当没有调用此函数，默认情况下会使用SPL自定义的**spl_autoload函数**。
+在PHP5之前，各个PHP框架如果要实现类的自动加载，一般都是按照某种约定自己实现一个遍历目录，自动加载所有符合约定规则的文件的类或函数。 当然，PHP5之前对面向对象的支持并不是太好，类的使用也没有现在频繁。 在PHP5后，当加载PHP类时，如果类所在文件没有被包含进来，或者类名出错，Zend引擎会自动调用 **__autoload函数**。此函数需要用户自己实现 __autoload函数。 在PHP5.1.2版本后，可以使用**spl_autoload_register函数**自定义自动加载处理函数。当没有调用此函数，默认情况下会使用SPL自定义的**spl_autoload函数**。
 
 ### 2. php自动加载
 
@@ -59,15 +59,15 @@ new Demo();
 
 第三步最简单，只需要使用include/require即可。要实现第一步，第二步的功能，必须在开发时约定类名与磁盘文件的映射方法，只有这样我们才能根据类名找到它对应的磁盘文件。
 
-因此，当有大量的类文件要包含的时候，我们只要确定相应的规则，然后在\__autoload()函数中，将类名与实际的磁盘文件对应起来，就可以实现**lazy loading**的效果。从这里我们也可以看出__autoload()函数的实现中**最重要的是类名与实际的磁盘文件映射规则的实现**。
+因此，当有大量的类文件要包含的时候，我们只要确定相应的规则，然后在__autoload()函数中，将类名与实际的磁盘文件对应起来，就可以实现**lazy loading**的效果。从这里我们也可以看出__autoload()函数的实现中**最重要的是类名与实际的磁盘文件映射规则的实现**。
 
 但现在问题来了，假如在一个系统的实现中，需要使用很多其它的类库，这些类库可能是由不同的开发工程师开发，其类名与实际的磁盘文件的映射规则不尽相同。这时假如要实现类库文件的自动加载，由于**__autoload() 是全局函数只能定义一次，就必须在__autoload()函数中将所有的映射规则全部实现**，因此该函数有可能会非常复杂，甚至无法实现，即便能够实现，也会给将来的维护和系统效率带来很大的负面影响。
 
-在这种情况下，在PHP5引入SPL标准库，一种新的解决方案，使用一个 \__autoload函数的队列 ，不同的映射关系写到不同的 __autoload函数中去，然后统一注册统一管理，即**spl_autoload_register()函数**。
+在这种情况下，在PHP5引入SPL标准库，一种新的解决方案，使用一个 __autoload函数的队列 ，不同的映射关系写到不同的 __autoload函数中去，然后统一注册统一管理，即**spl_autoload_register()函数**。
 
 #### 2.2 spl_autoload_register()函数
 
-此函数的功能就是把函数注册至SPL的\__autoload函数队列中，并会将Zend Engine中的[__autoload()](https://www.php.net/manual/zh/function.autoload.php)函数取代为[spl_autoload()](https://www.php.net/manual/zh/function.spl-autoload.php)或[spl_autoload_call()](https://www.php.net/manual/zh/function.spl-autoload-call.php)。下面的例子可以看出：
+此函数的功能就是把函数注册至SPL的__autoload函数队列中，并会将Zend Engine中的[__autoload()](https://www.php.net/manual/zh/function.autoload.php)函数取代为[spl_autoload()](https://www.php.net/manual/zh/function.spl-autoload.php)或[spl_autoload_call()](https://www.php.net/manual/zh/function.spl-autoload-call.php)。下面的例子可以看出：
 
 ```php
 <?php
