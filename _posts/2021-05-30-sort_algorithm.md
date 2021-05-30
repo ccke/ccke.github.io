@@ -1,7 +1,7 @@
 ---
 title: 十大排序算法
 author: chukeey
-date: 2021-05-20 22:55:00 +0800
+date: 2021-05-30 22:55:00 +0800
 categories: [技术, 数据结构与算法]
 tags: [算法, 排序, go]
 pin: false
@@ -88,18 +88,19 @@ func selectionSort(data []int) {
 **代码实现：**
 
 ```go
-// 选择排序：是不稳定排序
-func selectionSort(data []int) {
+// 插入排序：是稳定排序
+func insertSort(data []int) {
 	size := len(data)
 	if size <= 1 {
 		return
 	}
-	for i := 0; i < size - 1; i++  {
-		for j := i+1; j < size; j++ {
-			if data[i] > data[j] {
-				data[j], data[i] = data[i], data[j]
-			}
+	for i := 1; i < size; i++  {
+		base := data[i]
+		j := i - 1
+		for ; j >= 0 && data[j] > base; j-- {
+			data[j] = data[j-1]
 		}
+		data[j] = base
 	}
 }
 ```
