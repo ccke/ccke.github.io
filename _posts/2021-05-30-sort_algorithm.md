@@ -2,7 +2,7 @@
 title: go语言版十大排序算法
 author: chukeey
 date: 2021-05-30 22:55:00 +0800
-categories: [技术, 数据结构与算法]
+categories: [计算机技术, 数据结构与算法]
 tags: [算法, 排序, go]
 pin: false
 ---

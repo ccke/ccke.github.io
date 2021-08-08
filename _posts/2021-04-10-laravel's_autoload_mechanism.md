@@ -2,7 +2,7 @@
 title: Laravel的类自动加载机制
 author: chukeey
 date: 2021-04-10 16:00:00 +0800
-categories: [技术, php, laravel框架]
+categories: [计算机技术, php, laravel框架]
 tags: [php, laravel, autoload]
 pin: false
 ---
